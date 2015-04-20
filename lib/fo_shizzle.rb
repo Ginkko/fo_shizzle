@@ -3,13 +3,21 @@ class String
       words = self.split()
       new_words = []
       words.each() do |word|
-          letters = word.split("")
-          letters.each() do |letter|
-          if letter.include?("s")
-            letter.replace("z")
-            
-          end
-
+        new_word = []
+        timer = 0
+        letters = word.split("")
+        letters.each() do |letter|
+            if timer.>(0)
+                if letter.include?("s")
+                   letter.replace("z")
+               end
+            end
+            timer = timer.+(1)
+            new_word.push(letter)
+        end
+          new_word_temporary = new_word.join("")
+          new_words.push(new_word_temporary)
       end
-    end          l
+    new_words.join(" ")
+    end
 end
